@@ -22,13 +22,22 @@ const FlightContainer = () => {
         setSelectedFlight(selectedFlight)
     }
 
-    return (
-        <>
-        <h1>List of Flights</h1>
-        <FlightList flights={flights} onFlightClick={() => {handleFlightClick()}} />
-        <FlightDetail flight={selectedFlight} />
-        </>
-    )
+    if (!flights)
+    {
+        return(
+            <h1>NO FLIGHTS!!!</h1>
+        );
+    }
+    else
+    {
+        return (
+            <>
+            <h1>List of Flights</h1>
+            <FlightList flights={flights} onFlightClick={() => {handleFlightClick()}} />
+            <FlightDetail flight={selectedFlight} />
+            </>
+        );
+    }
 }
 
 export default FlightContainer;

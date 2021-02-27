@@ -14,7 +14,8 @@ const FlightList = ({flights, onFlightClick}) => {
 
         console.log("is there any state:", flights.states);
         const setFlightNames = found.map((flight) => {
-            return <li onClick={() => {onFlightClick(flight)}}>{flight.states.callsign}</li>
+            return <li onClick={() => {onFlightClick(flight)}}>{flight[0]}</li>
+
         })
 
         return (

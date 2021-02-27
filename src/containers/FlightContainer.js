@@ -34,7 +34,7 @@ const FlightContainer = () => {
             <>
             <h1>List of Flights</h1>
             <FlightList flights={flights} onFlightClick={() => {handleFlightClick()}} />
-            <FlightDetail flight={selectedFlight} />
+            {/* <FlightDetail flight={selectedFlight} /> */}
             </>
         );
     }

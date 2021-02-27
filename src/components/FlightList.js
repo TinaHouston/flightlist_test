@@ -8,16 +8,26 @@ const FlightList = ({flights, onFlightClick}) => {
     //     return states
     // })
 
-    const setFlightNames = flights.states.map((flight) => {
-        return <li onClick={() => {onFlightClick(flight)}}>{flight.states.callsign}</li>
-    })
+    if (flights.states)
+    {
+        const found = [...flights.states];
 
-    return (
-        <>
-        <ul>
-            {setFlightNames}
-        </ul>
-        </>
-    )
+        console.log("is there any state:", flights.states);
+        const setFlightNames = found.map((flight) => {
+            return <li onClick={() => {onFlightClick(flight)}}>{flight.states.callsign}</li>
+        })
+
+        return (
+            <>
+            <ul>
+                {setFlightNames}
+            </ul>
+            </>
+        )
+    }
+    else
+    {
+        return (<h1>loading...</h1>)
+    }
 }
 export default FlightList;
